@@ -45,10 +45,60 @@ function sumOfMultiples(num1, num2, max_value)
 	return sum;
 }
 
+function solve1() {
+	int1 = document.getElementById("p1_int1").value;
+	int2 = document.getElementById("p1_int2").value;
+	max = document.getElementById("p1_max").value;
+	if (isNaN(Number(int1)) || isNaN(Number(int2)) || isNaN(Number(max)))
+	{
+		alert("A number entered was invalid");
+	}
+	else
+	{
+		answer1 = sumOfMultiples(int1, int2, max);
+		alert("The sum of all the multiples of " + int1 + " and " + int2 + " below " + max + " is " + answer1);
+	}	
+}
+
 /******************** Problem 2 Solution ********************/
 
-function getPrimeStart(number)
-{ //Gets a number the number is evenly divisible by
+function fibonacciSequence(max) {
+	var fibo = [1, 2];
+	while (fibo[fibo.length-1] + fibo[fibo.length-2] < max)
+	{
+		fibo.push(fibo[fibo.length-1] + fibo[fibo.length-2])
+	}
+	return fibo;
+}
+
+function fiboSum(max) {
+	var sum = 0;
+	var sequence = fibonacciSequence(max);
+	sequence.forEach(function(num) {
+		if (num % 2 == 0)
+		{
+			sum += num;
+		}
+	});
+	return sum;
+}
+
+function solve2() {
+	max2 = document.getElementById("p2_max").value;
+	if (isNaN(Number(max2)))
+	{
+		alert("You entered an invalid number");
+	}
+	else
+	{
+		fibnacci = fiboSum(max2);
+		alert("The sum of the numbers in the fibonacci sequence below " + max2 + " is " + fibnacci);
+	}
+}
+
+/******************** Problem 3 Solution ********************/
+
+function getPrimeStart(number) { //Gets a number the number is evenly divisible by
 	count = 2;
 	while (number%count != 0)
 	{
@@ -57,8 +107,7 @@ function getPrimeStart(number)
 	return count;
 }
 
-function factorize(number)
-{
+function factorize(number) {
 	newFactors = [];
 	prime = true;
 	if (typeof(number) === 'number')
@@ -105,27 +154,15 @@ function maxFactor(num) {
 	return max;
 }
 
-/******************** Problem 3 Solution ********************/
-//4000000
-function fibonacciSequence(max) {
-	var fibo = [1, 2];
-	while (fibo[fibo.length-1] + fibo[fibo.length-2] < max)
+function solve3() {
+	max3 = document.getElementById("p3_max").value;
+	if (isNaN(Number(max3)))
 	{
-		fibo.push(fibo[fibo.length-1] + fibo[fibo.length-2])
+		alert("You entered an invalid number");
 	}
-	return fibo;
+	else
+	{
+		maxF = maxFactor(Number(max3));
+		alert("The maximum prime number of " + max3 + " is " + maxF);
+	}
 }
-
-function fiboSum(max) {
-	var sum = 0;
-	var sequence = fibonacciSequence(max);
-	sequence.forEach(function(num) {
-		if (num % 2 == 0)
-		{
-			sum += num;
-		}
-	});
-	return sum;
-}
-
-console.log(fiboSum(4000000));

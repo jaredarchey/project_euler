@@ -1,0 +1,49 @@
+body {
+	background-color: #FFD685;
+}
+
+h1, h3 {
+	position: relative;
+	text-align: center;
+	font-weight: bold;
+}
+
+input {
+	width: 10%;
+}
+
+#problem1, #problem2, #problem3 {
+	height: 150px;
+	width: 50%;
+	margin-bottom: 30px;
+	margin-left: 25%;
+	border: 1px solid black;
+	background-color: #FFFFA3;
+}
+
+#problem1 div {
+	margin-left: 20px;
+}
+
+#problem1 input {
+	margin-right: 5%;
+}
+
+#problem2 div {
+	margin-left: 40%;
+}
+
+#problem2 input {
+	width:20%;
+	margin-right: 5%;
+}
+
+#problem3 div {
+	margin-left: 35%;
+}
+
+#problem3 input {
+	width:20%;
+	margin-right: 5%;
+}
+
